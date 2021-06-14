@@ -71,7 +71,6 @@ int main(){
 	printf("別話者 city012&city022\n");
 	DP(data2,data4,DPct);
 	NC(DPct);
-	//認識率
 }
 
 double NC(int BN){
@@ -85,7 +84,6 @@ double NC(int BN){
 				RI = T[BN][AA][BB];
 				PA[0] = AA;
 				PA[1] = BB;
-			//	printf("%d = %d\n", AA, BB);
 			}
 		}
 		if(PA[0] == PA[1]){
@@ -109,9 +107,7 @@ double DP(double dataA[100][150][15], double dataB[100][150][15], int BN){
 			for(i=0; i < dataA[AA][0][0]; i++){
 				for(j=0; j < dataB[BB][0][0]; j++){
 					for(k=0; k<15; k++){
-						Px = dataA[AA][i][k]-dataB[BB][j][k];
-						x += pow(Px, 2);
-						//x += pow(dataA[AA][i][k]-dataB[BB][j][k], 2.0);
+						x += pow(dataA[AA][i][k]-dataB[BB][j][k], 2.0);
 					}
 					d[i][j] = sqrt(x);
 					x=0;
